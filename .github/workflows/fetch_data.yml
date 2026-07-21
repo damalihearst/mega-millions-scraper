@@ -1,1 +1,34 @@
+name: Fetch Mega Millions Data
 
+on:
+  schedule:
+    # Runs every Wednesday and Saturday at 06:00 UTC (after draw nights)
+    - cron: "0 6 * * 3,6"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run scraper
+        run: python fetch_data.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/mega-millions.csv
+          git diff --cached --quiet || git commit -m "Update Mega Millions frequency data [$(date -u '+%Y-%m-%d')]"
+          git push
