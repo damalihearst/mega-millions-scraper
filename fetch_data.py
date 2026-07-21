@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 
 
-URL = "https://www.molottery.com/mega-millions/number-frequencies"
+URL = "https://www.molottery.com/mega-millions/number-frequencies.do"
 
 
 def fetch_page(url):
