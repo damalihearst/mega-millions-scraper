@@ -209,9 +209,11 @@ def main():
 
     # Analyze and save top/bottom 5
     analysis = analyze_frequencies(data)
+    analysis["last_updated"] = datetime.now().strftime("%Y-%m-%d")
     analysis_path = os.path.join("data", "analysis.json")
     save_analysis(analysis, analysis_path)
     print(f"Analysis saved to {analysis_path}")
+
 
     # Print summary
     print_analysis(analysis)
