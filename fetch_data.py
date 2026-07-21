@@ -35,8 +35,7 @@ def parse_frequency_table(html):
     """
     # Locate the target table
     table_pattern = re.compile(
-        r'<table\s+class="table table_game table_game_1-3 table_highlight-first">\'
-        r'(.*?)</table>',
+        r'<table\s+class="table table_game table_game_1-3 table_highlight-first">(.*?)</table>',
         re.DOTALL,
     )
     table_match = table_pattern.search(html)
