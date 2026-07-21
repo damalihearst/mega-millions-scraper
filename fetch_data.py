@@ -22,7 +22,12 @@ def fetch_page(url):
         },
     )
     with urllib.request.urlopen(req, timeout=30) as response:
-        return response.read().decode("utf-8")
+        raw = response.read()
+        # Try utf-8 first, fall back to latin-1 which never fails
+        try:
+            return raw.decode("utf-8")
+        except UnicodeDecodeError:
+            return raw.decode("latin-1")
 
 
 def parse_frequency_table(html):
@@ -68,21 +73,29 @@ def parse_frequency_table(html):
 
         number = cleaned[0]
         white_times = cleaned[1]
-        white_pct = cleaned[2].replace("%", "")
+        white_pct_raw = cleaned[2].replace("%", "")
+
+        # Handle percentage: could be decimal (0.067) or already percentage (6.70)
+        white_pct = float(white_pct_raw)
+        if white_pct < 1:
+            white_pct = round(white_pct * 100, 2)
 
         mega_times = ""
-        mega_pct = ""
+        mega_pct = None
         if len(cleaned) >= 5 and cleaned[3] != "" and cleaned[4] != "":
             mega_times = cleaned[3]
-            mega_pct = cleaned[4].replace("%", "")
+            mega_pct_raw = cleaned[4].replace("%", "")
+            mega_pct = float(mega_pct_raw)
+            if mega_pct < 1:
+                mega_pct = round(mega_pct * 100, 2)
 
         data.append(
             {
                 "number": int(number),
                 "white_ball_times_drawn": int(white_times),
-                "white_ball_pct": float(white_pct),
+                "white_ball_pct": white_pct,
                 "mega_ball_times_drawn": int(mega_times) if mega_times else None,
-                "mega_ball_pct": float(mega_pct) if mega_pct else None,
+                "mega_ball_pct": mega_pct,
             }
         )
 
@@ -125,7 +138,7 @@ def analyze_frequencies(data):
         for row in white_sorted[-5:]
     ]
 
-    # Mega ball analysis (only numbers 1-25 have mega ball data)
+    # Mega ball analysis (only numbers with mega ball data)
     mega_data = [row for row in data if row["mega_ball_times_drawn"] is not None]
     mega_sorted = sorted(mega_data, key=lambda x: x["mega_ball_times_drawn"], reverse=True)
     top_5_mega = [
