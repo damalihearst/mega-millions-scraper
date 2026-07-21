@@ -2,6 +2,7 @@ import urllib.request
 import re
 import csv
 import os
+import json
 from datetime import datetime
 
 
@@ -28,11 +29,13 @@ def parse_frequency_table(html):
     """
     Parse the frequency table from the HTML.
     Targets: <table class="table table_game table_game_1-3 table_highlight-first">
-    Returns a list of dicts.
+    Returns a list of dicts with keys:
+        number, white_ball_times_drawn, white_ball_pct,
+        mega_ball_times_drawn, mega_ball_pct
     """
     # Locate the target table
     table_pattern = re.compile(
-        r'<table\s+class="table table_game table_game_1-3 table_highlight-first">'
+        r'<table\s+class="table table_game table_game_1-3 table_highlight-first">\'
         r'(.*?)</table>',
         re.DOTALL,
     )
@@ -106,6 +109,79 @@ def save_to_csv(data, filepath):
             writer.writerow(row)
 
 
+def analyze_frequencies(data):
+    """
+    Determine the top 5 and bottom 5 most/least common numbers
+    for both white balls and mega balls.
+    Returns a dict with the analysis results.
+    """
+    # White ball analysis (all 70 numbers)
+    white_sorted = sorted(data, key=lambda x: x["white_ball_times_drawn"], reverse=True)
+    top_5_white = [
+        {"number": row["number"], "times_drawn": row["white_ball_times_drawn"], "pct": row["white_ball_pct"]}
+        for row in white_sorted[:5]
+    ]
+    bottom_5_white = [
+        {"number": row["number"], "times_drawn": row["white_ball_times_drawn"], "pct": row["white_ball_pct"]}
+        for row in white_sorted[-5:]
+    ]
+
+    # Mega ball analysis (only numbers 1-25 have mega ball data)
+    mega_data = [row for row in data if row["mega_ball_times_drawn"] is not None]
+    mega_sorted = sorted(mega_data, key=lambda x: x["mega_ball_times_drawn"], reverse=True)
+    top_5_mega = [
+        {"number": row["number"], "times_drawn": row["mega_ball_times_drawn"], "pct": row["mega_ball_pct"]}
+        for row in mega_sorted[:5]
+    ]
+    bottom_5_mega = [
+        {"number": row["number"], "times_drawn": row["mega_ball_times_drawn"], "pct": row["mega_ball_pct"]}
+        for row in mega_sorted[-5:]
+    ]
+
+    return {
+        "white_ball": {
+            "top_5_most_common": top_5_white,
+            "top_5_least_common": bottom_5_white,
+        },
+        "mega_ball": {
+            "top_5_most_common": top_5_mega,
+            "top_5_least_common": bottom_5_mega,
+        },
+    }
+
+
+def save_analysis(analysis, filepath):
+    """Save the analysis results to a JSON file."""
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(analysis, f, indent=2)
+
+
+def print_analysis(analysis):
+    """Print a formatted summary of the analysis."""
+    print("\n" + "=" * 60)
+    print("MEGA MILLIONS NUMBER FREQUENCY ANALYSIS")
+    print("=" * 60)
+
+    print("\n--- TOP 5 MOST COMMON WHITE BALL NUMBERS ---")
+    for i, item in enumerate(analysis["white_ball"]["top_5_most_common"], 1):
+        print(f"  {i}. Ball #{item['number']:>2} - drawn {item['times_drawn']} times ({item['pct']}%)")
+
+    print("\n--- TOP 5 LEAST COMMON WHITE BALL NUMBERS ---")
+    for i, item in enumerate(analysis["white_ball"]["top_5_least_common"], 1):
+        print(f"  {i}. Ball #{item['number']:>2} - drawn {item['times_drawn']} times ({item['pct']}%)")
+
+    print("\n--- TOP 5 MOST COMMON MEGA BALL NUMBERS ---")
+    for i, item in enumerate(analysis["mega_ball"]["top_5_most_common"], 1):
+        print(f"  {i}. Ball #{item['number']:>2} - drawn {item['times_drawn']} times ({item['pct']}%)")
+
+    print("\n--- TOP 5 LEAST COMMON MEGA BALL NUMBERS ---")
+    for i, item in enumerate(analysis["mega_ball"]["top_5_least_common"], 1):
+        print(f"  {i}. Ball #{item['number']:>2} - drawn {item['times_drawn']} times ({item['pct']}%)")
+
+    print("\n" + "=" * 60)
+
+
 def main():
     print(f"[{datetime.now().isoformat()}] Fetching data from {URL}")
     html = fetch_page(URL)
@@ -114,11 +190,20 @@ def main():
     data = parse_frequency_table(html)
     print(f"Found {len(data)} rows of data.")
 
-    output_path = os.path.join("data", "mega-millions.csv")
-    save_to_csv(data, output_path)
-    print(f"Data saved to {output_path}")
+    # Save raw data to CSV
+    csv_path = os.path.join("data", "mega-millions.csv")
+    save_to_csv(data, csv_path)
+    print(f"Data saved to {csv_path}")
+
+    # Analyze and save top/bottom 5
+    analysis = analyze_frequencies(data)
+    analysis_path = os.path.join("data", "analysis.json")
+    save_analysis(analysis, analysis_path)
+    print(f"Analysis saved to {analysis_path}")
+
+    # Print summary
+    print_analysis(analysis)
 
 
 if __name__ == "__main__":
     main()
-
