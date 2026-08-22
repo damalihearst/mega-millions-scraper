@@ -4,27 +4,27 @@
       {
         "number": 10,
         "times_drawn": 85,
-        "pct": 9.25
+        "pct": 9.24
       },
       {
         "number": 17,
         "times_drawn": 82,
-        "pct": 8.92
+        "pct": 8.91
       },
       {
         "number": 31,
         "times_drawn": 80,
-        "pct": 8.71
+        "pct": 8.7
       },
       {
         "number": 3,
         "times_drawn": 78,
-        "pct": 8.49
+        "pct": 8.48
       },
       {
         "number": 14,
         "times_drawn": 77,
-        "pct": 8.38
+        "pct": 8.37
       }
     ],
     "top_5_least_common": [
@@ -36,46 +36,46 @@
       {
         "number": 45,
         "times_drawn": 53,
-        "pct": 5.77
+        "pct": 5.76
       },
       {
         "number": 65,
         "times_drawn": 53,
-        "pct": 5.77
+        "pct": 5.76
       },
       {
         "number": 67,
         "times_drawn": 52,
-        "pct": 5.66
+        "pct": 5.65
       },
       {
         "number": 51,
         "times_drawn": 51,
-        "pct": 5.55
+        "pct": 5.54
       }
     ]
   },
   "mega_ball": {
     "top_5_most_common": [
       {
-        "number": 22,
-        "times_drawn": 47,
-        "pct": 5.11
+        "number": 24,
+        "times_drawn": 48,
+        "pct": 5.22
       },
       {
-        "number": 24,
+        "number": 22,
         "times_drawn": 47,
         "pct": 5.11
       },
       {
         "number": 18,
         "times_drawn": 44,
-        "pct": 4.79
+        "pct": 4.78
       },
       {
         "number": 11,
         "times_drawn": 43,
-        "pct": 4.68
+        "pct": 4.67
       },
       {
         "number": 4,
@@ -97,19 +97,19 @@
       {
         "number": 8,
         "times_drawn": 29,
-        "pct": 3.16
+        "pct": 3.15
       },
       {
         "number": 15,
         "times_drawn": 28,
-        "pct": 3.05
+        "pct": 3.04
       },
       {
         "number": 5,
         "times_drawn": 27,
-        "pct": 2.94
+        "pct": 2.93
       }
     ]
   },
-  "last_updated": "2026-08-19"
+  "last_updated": "2026-08-22"
 }
