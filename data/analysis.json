@@ -4,54 +4,54 @@
       {
         "number": 10,
         "times_drawn": 86,
-        "pct": 9.33
+        "pct": 9.32
       },
       {
         "number": 17,
         "times_drawn": 83,
-        "pct": 9.0
+        "pct": 8.99
       },
       {
         "number": 31,
         "times_drawn": 80,
-        "pct": 8.68
+        "pct": 8.67
       },
       {
         "number": 3,
         "times_drawn": 78,
-        "pct": 8.46
+        "pct": 8.45
       },
       {
         "number": 42,
         "times_drawn": 78,
-        "pct": 8.46
+        "pct": 8.45
       }
     ],
     "top_5_least_common": [
       {
         "number": 23,
         "times_drawn": 55,
-        "pct": 5.97
+        "pct": 5.96
       },
       {
         "number": 45,
         "times_drawn": 53,
-        "pct": 5.75
+        "pct": 5.74
       },
       {
         "number": 65,
         "times_drawn": 53,
-        "pct": 5.75
+        "pct": 5.74
+      },
+      {
+        "number": 51,
+        "times_drawn": 52,
+        "pct": 5.63
       },
       {
         "number": 67,
         "times_drawn": 52,
-        "pct": 5.64
-      },
-      {
-        "number": 51,
-        "times_drawn": 51,
-        "pct": 5.53
+        "pct": 5.63
       }
     ]
   },
@@ -60,12 +60,12 @@
       {
         "number": 24,
         "times_drawn": 48,
-        "pct": 5.21
+        "pct": 5.2
       },
       {
         "number": 22,
         "times_drawn": 47,
-        "pct": 5.1
+        "pct": 5.09
       },
       {
         "number": 18,
@@ -80,7 +80,7 @@
       {
         "number": 4,
         "times_drawn": 41,
-        "pct": 4.45
+        "pct": 4.44
       }
     ],
     "top_5_least_common": [
@@ -97,12 +97,12 @@
       {
         "number": 8,
         "times_drawn": 29,
-        "pct": 3.15
+        "pct": 3.14
       },
       {
         "number": 15,
         "times_drawn": 28,
-        "pct": 3.04
+        "pct": 3.03
       },
       {
         "number": 5,
@@ -111,5 +111,5 @@
       }
     ]
   },
-  "last_updated": "2026-08-29"
+  "last_updated": "2026-09-02"
 }
