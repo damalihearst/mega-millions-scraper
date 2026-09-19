@@ -4,22 +4,22 @@
       {
         "number": 10,
         "times_drawn": 86,
-        "pct": 9.28
+        "pct": 9.27
       },
       {
         "number": 17,
         "times_drawn": 84,
-        "pct": 9.06
+        "pct": 9.05
       },
       {
         "number": 31,
         "times_drawn": 80,
-        "pct": 8.63
+        "pct": 8.62
       },
       {
         "number": 3,
         "times_drawn": 79,
-        "pct": 8.52
+        "pct": 8.51
       },
       {
         "number": 42,
@@ -36,22 +36,22 @@
       {
         "number": 45,
         "times_drawn": 53,
-        "pct": 5.72
+        "pct": 5.71
       },
       {
         "number": 65,
         "times_drawn": 53,
-        "pct": 5.72
+        "pct": 5.71
       },
       {
         "number": 51,
         "times_drawn": 52,
-        "pct": 5.61
+        "pct": 5.6
       },
       {
         "number": 67,
         "times_drawn": 52,
-        "pct": 5.61
+        "pct": 5.6
       }
     ]
   },
@@ -60,25 +60,25 @@
       {
         "number": 24,
         "times_drawn": 49,
-        "pct": 5.29
+        "pct": 5.28
       },
       {
         "number": 22,
         "times_drawn": 48,
-        "pct": 5.18
+        "pct": 5.17
       },
       {
         "number": 18,
         "times_drawn": 44,
-        "pct": 4.75
+        "pct": 4.74
       },
       {
         "number": 11,
         "times_drawn": 43,
-        "pct": 4.64
+        "pct": 4.63
       },
       {
-        "number": 4,
+        "number": 1,
         "times_drawn": 41,
         "pct": 4.42
       }
@@ -92,12 +92,12 @@
       {
         "number": 23,
         "times_drawn": 30,
-        "pct": 3.24
+        "pct": 3.23
       },
       {
         "number": 8,
         "times_drawn": 29,
-        "pct": 3.13
+        "pct": 3.12
       },
       {
         "number": 15,
@@ -111,5 +111,5 @@
       }
     ]
   },
-  "last_updated": "2026-09-16"
+  "last_updated": "2026-09-19"
 }
