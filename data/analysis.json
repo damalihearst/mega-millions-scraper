@@ -18,40 +18,40 @@
       },
       {
         "number": 3,
-        "times_drawn": 79,
-        "pct": 8.43
+        "times_drawn": 80,
+        "pct": 8.53
       },
       {
         "number": 42,
         "times_drawn": 79,
-        "pct": 8.43
+        "pct": 8.42
       }
     ],
     "top_5_least_common": [
       {
         "number": 23,
         "times_drawn": 55,
-        "pct": 5.87
+        "pct": 5.86
+      },
+      {
+        "number": 51,
+        "times_drawn": 54,
+        "pct": 5.76
       },
       {
         "number": 45,
         "times_drawn": 53,
-        "pct": 5.66
-      },
-      {
-        "number": 51,
-        "times_drawn": 53,
-        "pct": 5.66
+        "pct": 5.65
       },
       {
         "number": 65,
         "times_drawn": 53,
-        "pct": 5.66
+        "pct": 5.65
       },
       {
         "number": 67,
         "times_drawn": 53,
-        "pct": 5.66
+        "pct": 5.65
       }
     ]
   },
@@ -60,56 +60,56 @@
       {
         "number": 22,
         "times_drawn": 49,
-        "pct": 5.23
+        "pct": 5.22
       },
       {
         "number": 24,
         "times_drawn": 49,
-        "pct": 5.23
+        "pct": 5.22
       },
       {
         "number": 11,
         "times_drawn": 44,
-        "pct": 4.7
+        "pct": 4.69
       },
       {
         "number": 18,
         "times_drawn": 44,
-        "pct": 4.7
+        "pct": 4.69
       },
       {
         "number": 1,
         "times_drawn": 41,
-        "pct": 4.38
+        "pct": 4.37
       }
     ],
     "top_5_least_common": [
       {
         "number": 21,
         "times_drawn": 32,
-        "pct": 3.42
+        "pct": 3.41
       },
       {
         "number": 8,
         "times_drawn": 31,
-        "pct": 3.31
+        "pct": 3.3
       },
       {
         "number": 23,
         "times_drawn": 31,
-        "pct": 3.31
+        "pct": 3.3
+      },
+      {
+        "number": 5,
+        "times_drawn": 28,
+        "pct": 2.99
       },
       {
         "number": 15,
         "times_drawn": 28,
         "pct": 2.99
-      },
-      {
-        "number": 5,
-        "times_drawn": 27,
-        "pct": 2.88
       }
     ]
   },
-  "last_updated": "2026-10-21"
+  "last_updated": "2026-10-24"
 }
