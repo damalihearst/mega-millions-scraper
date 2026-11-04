@@ -4,22 +4,22 @@
       {
         "number": 10,
         "times_drawn": 88,
-        "pct": 9.36
+        "pct": 9.35
       },
       {
         "number": 17,
         "times_drawn": 84,
-        "pct": 8.94
+        "pct": 8.93
       },
       {
         "number": 31,
-        "times_drawn": 81,
-        "pct": 8.62
+        "times_drawn": 82,
+        "pct": 8.71
       },
       {
         "number": 3,
         "times_drawn": 80,
-        "pct": 8.51
+        "pct": 8.5
       },
       {
         "number": 42,
@@ -31,7 +31,7 @@
       {
         "number": 23,
         "times_drawn": 55,
-        "pct": 5.85
+        "pct": 5.84
       },
       {
         "number": 45,
@@ -51,7 +51,7 @@
       {
         "number": 65,
         "times_drawn": 53,
-        "pct": 5.64
+        "pct": 5.63
       }
     ]
   },
@@ -92,12 +92,12 @@
       {
         "number": 8,
         "times_drawn": 31,
-        "pct": 3.3
+        "pct": 3.29
       },
       {
         "number": 23,
         "times_drawn": 31,
-        "pct": 3.3
+        "pct": 3.29
       },
       {
         "number": 5,
@@ -111,5 +111,5 @@
       }
     ]
   },
-  "last_updated": "2026-10-31"
+  "last_updated": "2026-11-04"
 }
