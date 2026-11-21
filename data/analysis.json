@@ -4,34 +4,34 @@
       {
         "number": 10,
         "times_drawn": 90,
-        "pct": 9.52
+        "pct": 9.51
       },
       {
         "number": 17,
         "times_drawn": 84,
-        "pct": 8.89
+        "pct": 8.88
       },
       {
         "number": 31,
         "times_drawn": 82,
-        "pct": 8.68
+        "pct": 8.67
       },
       {
         "number": 3,
         "times_drawn": 81,
-        "pct": 8.57
+        "pct": 8.56
       },
       {
         "number": 42,
         "times_drawn": 79,
-        "pct": 8.36
+        "pct": 8.35
       }
     ],
     "top_5_least_common": [
       {
         "number": 23,
         "times_drawn": 55,
-        "pct": 5.82
+        "pct": 5.81
       },
       {
         "number": 45,
@@ -65,7 +65,7 @@
       {
         "number": 24,
         "times_drawn": 49,
-        "pct": 5.19
+        "pct": 5.18
       },
       {
         "number": 18,
@@ -75,7 +75,7 @@
       {
         "number": 11,
         "times_drawn": 44,
-        "pct": 4.66
+        "pct": 4.65
       },
       {
         "number": 1,
@@ -85,7 +85,7 @@
     ],
     "top_5_least_common": [
       {
-        "number": 21,
+        "number": 20,
         "times_drawn": 33,
         "pct": 3.49
       },
@@ -111,5 +111,5 @@
       }
     ]
   },
-  "last_updated": "2026-11-18"
+  "last_updated": "2026-11-21"
 }
